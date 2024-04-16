@@ -3,6 +3,8 @@ import './App.css'
 import {TooltipComponent, Position,} from '@syncfusion/ej2-react-popups'
 import {FiSettings} from 'react-icons/fi'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import { Navbar,Sidebar,ThemeSetting, } from './components'
+import Ecommerce from './pages/Ecommerce';
 function App() {
   const position: Position = 'top' as Position;
   const activeMenu = true
@@ -21,45 +23,45 @@ function App() {
       {
         activeMenu ?(
           <div className='w-72 fixed dark:bg-secondary-dark-bg'>
-            Sidebar
+            <Sidebar/>
           </div>
         ):(
           <div className='dark:bg-main-dark-bg '>
-            no sidebar
+        <Sidebar/>
           </div>
         )
       }
 
       <div className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72' : 'flex-2'}`}>
           <div className='fixed md:static bg-main-bg w-full'>
-              Navbar
+           <Navbar/>
           </div>
       </div>
 
       <Routes>
-        <Route path='/' element='ecommerce page'/>
-        <Route path='/ecommerce' element='ecommerce page'/>
+        <Route path='/' element={<Ecommerce/>}/>
+        <Route path='/ecommerce' element={<Ecommerce/>}/>
 
         {/* pages */}
-        <Route path='/orders' element='ecommerce page'/>
-        <Route path='/employees' element='ecommerce page'/>
-        <Route path='/customers' element='ecommerce page'/>
+        <Route path='/orders' element={<Ecommerce/>}/>
+        <Route path='/employees' element={<Ecommerce/>}/>
+        <Route path='/customers' element={<Ecommerce/>}/>
 
         {/* Apps */}
-        <Route path='/kanban' element='ecommerce page'/>
-        <Route path='/editor' element='ecommerce page'/>
-        <Route path='/calenders' element='ecommerce page'/>
-        <Route path='/color-pickers' element='ecommerce page'/>
+        <Route path='/kanban' element={<Ecommerce/>}/>
+        <Route path='/editor' element={<Ecommerce/>}/>
+        <Route path='/calenders' element={<Ecommerce/>}/>
+        <Route path='/color-pickers' element={<Ecommerce/>}/>
 
             {/* charts */}
-        <Route path='/line' element='ecommerce page'/>
-        <Route path='/pyramid' element='ecommerce page'/>
-        <Route path='/area' element='ecommerce page'/>
-        <Route path='/bar' element='ecommerce page'/>
-        <Route path='/pie' element='ecommerce page'/>
-        <Route path='/financial' element='ecommerce page'/>
-        <Route path='/color-mapping' element='ecommerce page'/>
-        <Route path='/stacked' element='ecommerce page'/>
+        <Route path='/line' element={<Ecommerce/>}/>
+        <Route path='/pyramid' element={<Ecommerce/>}/>
+        <Route path='/area' element={<Ecommerce/>}/>
+        <Route path='/bar' element={<Ecommerce/>}/>
+        <Route path='/pie' element={<Ecommerce/>}/>
+        <Route path='/financial' element={<Ecommerce/>}/>
+        <Route path='/color-mapping' element={<Ecommerce/>}/>
+        <Route path='/stacked' element={<Ecommerce/>}/>
       </Routes>
       </div>
       </BrowserRouter>
